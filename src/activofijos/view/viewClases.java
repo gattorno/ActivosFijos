@@ -57,16 +57,16 @@ public class viewClases extends javax.swing.JDialog {
 
         txtDescripcion.setText("jTextField2");
 
-        bntNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/activofijos/Iconos/Nuevo32.png"))); // NOI18N
+        bntNuevo.setIcon(new javax.swing.ImageIcon("C:\\Users\\jhsgattorno\\Documents\\NetBeansProjects\\ActivosFijos\\src\\activofijos\\Iconos\\Nuevo32.png")); // NOI18N
         bntNuevo.setText("buttonIcon1");
 
-        bntBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/activofijos/Iconos/Borrar32.png"))); // NOI18N
+        bntBorrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\jhsgattorno\\Documents\\NetBeansProjects\\ActivosFijos\\src\\activofijos\\Iconos\\Borrar32.png")); // NOI18N
         bntBorrar.setText("buttonIcon1");
 
-        bntGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/activofijos/Iconos/Guardar32.png"))); // NOI18N
+        bntGuardar.setIcon(new javax.swing.ImageIcon("C:\\Users\\jhsgattorno\\Documents\\NetBeansProjects\\ActivosFijos\\src\\activofijos\\Iconos\\Guardar32.png")); // NOI18N
         bntGuardar.setText("buttonIcon1");
 
-        bntSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/activofijos/Iconos/regresar32.png"))); // NOI18N
+        bntSalir.setIcon(new javax.swing.ImageIcon("C:\\Users\\jhsgattorno\\Documents\\NetBeansProjects\\ActivosFijos\\src\\activofijos\\Iconos\\regresar32.png")); // NOI18N
         bntSalir.setText("buttonIcon1");
 
         tblClases.setModel(new javax.swing.table.DefaultTableModel(

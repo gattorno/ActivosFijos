@@ -119,7 +119,7 @@
     <Component class="org.edisoncor.gui.button.ButtonIcon" name="bntNuevo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/activofijos/Iconos/Nuevo32.png"/>
+          <Image iconType="2" name="C:\Users\jhsgattorno\Documents\NetBeansProjects\ActivosFijos\src\activofijos\Iconos\Nuevo32.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="buttonIcon1"/>
       </Properties>
@@ -127,7 +127,7 @@
     <Component class="org.edisoncor.gui.button.ButtonIcon" name="bntBorrar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/activofijos/Iconos/Borrar32.png"/>
+          <Image iconType="2" name="C:\Users\jhsgattorno\Documents\NetBeansProjects\ActivosFijos\src\activofijos\Iconos\Borrar32.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="buttonIcon1"/>
       </Properties>
@@ -135,7 +135,7 @@
     <Component class="org.edisoncor.gui.button.ButtonIcon" name="bntGuardar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/activofijos/Iconos/Guardar32.png"/>
+          <Image iconType="2" name="C:\Users\jhsgattorno\Documents\NetBeansProjects\ActivosFijos\src\activofijos\Iconos\Guardar32.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="buttonIcon1"/>
       </Properties>
@@ -143,7 +143,7 @@
     <Component class="org.edisoncor.gui.button.ButtonIcon" name="bntSalir">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/activofijos/Iconos/regresar32.png"/>
+          <Image iconType="2" name="C:\Users\jhsgattorno\Documents\NetBeansProjects\ActivosFijos\src\activofijos\Iconos\regresar32.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="buttonIcon1"/>
       </Properties>
