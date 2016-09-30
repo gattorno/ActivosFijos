@@ -39,6 +39,7 @@ public class clasesDAO {
            ps.setInt(2, miClase.getCodigoClase() );
            
            ps.executeUpdate();
+           JOptionPane.showMessageDialog(null, " Datos guardados ");
            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,  "Error en instruccion sql" + e.getMessage() + cSQL, "Error de conexion", JOptionPane.INFORMATION_MESSAGE );
@@ -72,9 +73,62 @@ public class clasesDAO {
         }
         
         
-    } // Fin de clasesDAO (clases miClase)
+    } // Fin del metodo constructor clasesDAO 
     
-     public modelClases buscar(int codigoClase)  throws SQLException {
+    public modelClases borrar (modelClases miClase) throws SQLException {
+        this.miClase = miClase;
+        
+        Connection accesoDB = myConexion.getConexion();
+        
+        cSQL = " SELECT COUNT(*) AS Total \n"
+                + " FROM activos \n"
+                + " WHERE codigoClase = ? ;" ;
+        
+        //ResultSet rs = st.executeQuery(cSQL);
+        try {
+            ps = accesoDB.prepareStatement(cSQL);
+            ps.setInt(1, miClase.getCodigoClase());
+            ps.executeQuery();
+            
+            ResultSet rs = ps.getResultSet();
+            rs.next();
+            if(rs.getInt(1) > 0  ){
+                JOptionPane.showMessageDialog(null, " Este registro no puede ser eliminado ");
+                ps.close();
+                accesoDB.close();
+                return miClase;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,  "Error en instruccion sql" + e.getMessage() + cSQL, "Error de conexion", JOptionPane.INFORMATION_MESSAGE );
+            ps.close();
+            accesoDB.close();
+        }
+        
+        cSQL = " DELETE FROM clases "
+                + " WHERE codigoClase = ? ;";
+
+        try {
+            ps = accesoDB.prepareStatement(cSQL);
+            ps.setInt(1, miClase.getCodigoClase());
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, " Datos eliminados ");
+            return miClase;
+
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null,  "Error en instruccion sql" + e.getMessage() + cSQL, "Error de conexion", JOptionPane.INFORMATION_MESSAGE );
+           ps.close();
+           accesoDB.close();
+        } finally {
+           if(ps != null || ps != null) {
+               ps.close();
+               accesoDB.close();
+           }            
+        }
+        return miClase;
+    } // fin del metodo borrar
+    
+    
+    public modelClases buscar(int codigoClase)  throws SQLException {
         
         Connection accesoDB = myConexion.getConexion();
         cSQL = "SELECT * FROM clses "
@@ -103,7 +157,7 @@ public class clasesDAO {
             }            
         }
         return miClase;
-     }         
+    } // Fin de del metodo buscar
  
          
     public modelClases primerRegistro (modelClases miClase) throws SQLException {
@@ -138,9 +192,9 @@ public class clasesDAO {
            }            
         }
         return miClase;
-    }
+    } // Fin del metodo primerRegistro
 
-        public modelClases siguienteNumero (modelClases miClase) throws SQLException {
+    public modelClases siguienteNumero (modelClases miClase) throws SQLException {
         this.miClase = miClase;
         
         Connection accesoDB = myConexion.getConexion();
@@ -172,7 +226,7 @@ public class clasesDAO {
            }            
         }
         return miClase;
-    }
+    } // fin del metodo siguienteNumero
     
     public ArrayList<modelClases> Registros (String cadena) throws SQLException {
         ArrayList listaClases = new ArrayList();
@@ -213,6 +267,6 @@ public class clasesDAO {
            }            
         }
         return listaClases;
-    }
+    } // Fin del metodo Registros
 
 }

@@ -13,24 +13,24 @@ import javax.swing.JOptionPane;
  * @author sierra
  */
 public class Conexion {
-    private static final int No = 2;
+    private static final int No = 1;  
     
     private static final  String driver = "org.postgresql.Driver";
     private static final  String base = "ActivosFijos";
-    private static String user = "ti";
-    private static String password = "arigato";
-    private static String server = "jdbc:postgresql://localhost:5432/" + base ;
-
-   
-    public Conexion() {
-        if(No == 2){
-            user = "postgres";
-            password = "melara1963";
-            server = "jdbc:postgresql://192.168.90.23:5432/" + base ;
-        }
-        
-    }
+    private static String user = "ti";  
+    private static String password = "arigato";  
+    private static String server = "jdbc:postgresql://localhost:5432/" + base ;  
     
+    public Conexion() {  
+      
+        if(No == 2){  
+            user = "postgres";  
+            password = "melara1963";  
+            server = "jdbc:postgresql://192.168.90.23:5432/" + base ;  
+        }  
+          
+    }  
+
     public Connection  getConexion(){
         Connection conexion = null;
         try {
