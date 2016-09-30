@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author sierra
  */
 public class Conexion {
-    private static final int No = 1;  
+    private static final int No = 2;  
     
     private static final  String driver = "org.postgresql.Driver";
     private static final  String base = "ActivosFijos";
