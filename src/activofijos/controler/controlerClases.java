@@ -13,7 +13,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -58,27 +57,6 @@ public class controlerClases implements ActionListener {
         seleccionarRegistro(vistaClases.getTblClases());
     }
 
-    @Override
-    public void actionPerformed(ActionEvent ae){
-        
-        if(ae.getSource() == vistaClases.getBntGuardar()){
-            guardar();
-            cargarPrimerRegistro();
-            cargarGrid(vistaClases.getTblClases());
-        }else if (ae.getSource() == vistaClases.getBntNuevo()) {
-            limpiar();
-            nuevo();
-        }else if (ae.getSource() == vistaClases.getBntBorrar()){
-            borrar();
-            cargarPrimerRegistro();
-            cargarGrid(vistaClases.getTblClases());
-        }        
-        else if (ae.getSource() == vistaClases.getBntSalir()){
-            vistaClases.dispose();
-        }
-                
-    }
-    
     public void limpiar(){
         txtCodigoClase.setText("");
         txtDescripcion.setText("");
@@ -92,16 +70,6 @@ public class controlerClases implements ActionListener {
             txtDescripcion.requestFocus();
         } catch (Exception e) {
             Logger.getLogger(controlerClases.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-    
-    public void borrar(){
-        Clases.setCodigoClase( Integer.valueOf(txtCodigoClase.getText()) );
-        Clases.setDescripcion(txtDescripcion.getText());
-        try {
-            clasesDAO.borrar(Clases);
-        } catch (SQLException ex) {
-            Logger.getLogger(controlerClases.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -122,7 +90,20 @@ public class controlerClases implements ActionListener {
         }
     }
     
-
+    @Override
+    public void actionPerformed(ActionEvent ae){
+        
+        if(ae.getSource() == vistaClases.getBntGuardar()){
+            guardar();
+            cargarGrid(vistaClases.getTblClases());
+        }else if (ae.getSource() == vistaClases.getBntNuevo()) {
+            limpiar();
+            nuevo();
+        }else if (ae.getSource() == vistaClases.getBntSalir()){
+            vistaClases.dispose();
+        }
+                
+    }
 
     private void guardar(){
         
